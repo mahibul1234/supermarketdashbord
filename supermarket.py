@@ -8,7 +8,7 @@ st.title('_SUPER MARKET SALE DASHBORD_')
 st.markdown("""----""")
 
 df=pd.read_csv('supermarket.csv')
-df['Date']=pd.to_datetime(df['Date'])
+df['Date']=pd.to_datetime(df['Date'],errors='coerce')
 df['Month'] = df['Date'].dt.month_name()
 
 st.write(df.head(3))
